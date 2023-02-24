@@ -67,7 +67,9 @@ def game():
 
         print("")
         
-        # Rock beats Scissors, Paper beats Rock, Scissors beats Paper
+        # Nested loops
+        # Rock crushes Scissors, Paper cover Rock, Scissors cuts Paper, Lizard poisons Spock, Spock vaporizes Rock
+        # Rock crushes Lizard, Paper disproves Spock, Scissors decapitates Lizard, Lizards eats Paper, Spock smashes Scissors
         if computerchoice == "rock":
             if playerchoice == "rock":
                 print("It's a Draw!")
