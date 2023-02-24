@@ -64,3 +64,5 @@ while game != "q":
     computer_guess()
   elif game == "G":
     player_guess()
+  else:
+    print("You did not pick a vaild option")
