@@ -67,7 +67,7 @@ def game():
 
         print("")
         
-        # Nested loops
+        # Nested loops to decide the outcome
         # Rock crushes Scissors, Paper cover Rock, Scissors cuts Paper, Lizard poisons Spock, Spock vaporizes Rock
         # Rock crushes Lizard, Paper disproves Spock, Scissors decapitates Lizard, Lizards eats Paper, Spock smashes Scissors
         if computerchoice == "rock":
@@ -191,3 +191,11 @@ def game():
     print("")
 
 game()
+
+option = ''
+
+while option != "N":
+    option = input("Do you want play again? (Y/N) ").upper()
+    if option == "Y":
+        print("")
+        game()
