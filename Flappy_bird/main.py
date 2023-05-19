@@ -45,11 +45,11 @@ def bird_animation():
 
 def score_display(game_state):
     if game_state == 'main_game':
-        score_surface = game_font.render(str(int(score)),True,(255,255,255))
+        score_surface = game_font.render(str(int(score)),True,(0,0,0))
         score_rect = score_surface.get_rect(center = (180,40))
         screen.blit(score_surface,score_rect)
     if game_state == 'game_over':
-        score_surface = game_font.render(f"Score: {int(score)}",True,(255,255,255))
+        score_surface = game_font.render(f"Score: {int(score)}",True,(0,0,0))
         score_rect = score_surface.get_rect(center = (180,40))
         screen.blit(score_surface,score_rect)
 
@@ -83,23 +83,24 @@ game_active = False
 score = 0
 high_score = 0
 
-bg_surface = pygame.image.load('assets/background-day.png').convert()
+bg_surface = pygame.image.load('assets/thedeep.jpg').convert()
 bg_surface = pygame.transform.scale(bg_surface, (WIDTH, HEIGHT))
 bg_night_surface = pygame.image.load('assets/background-night.png').convert()
 bg_night_surface = pygame.transform.scale(bg_night_surface, (WIDTH, HEIGHT))
 
-floor_surface = pygame.image.load('assets/base.png').convert()
+#floor_surface = pygame.image.load('assets/homeland.jpg').convert()
+floor_surface = pygame.image.load('assets/lava.jpg').convert()
 floor_surface = pygame.transform.scale(floor_surface, (WIDTH, floor_surface.get_height()))
 floor_x_pos = 0
 
 # Flying Pikachu Sprites
-#bird_downflap = pygame.transform.scale((pygame.image.load('assets/Flying_Pikachu_Dash.png').convert_alpha()), (32*2, 32*2))
-#bird_midflap = pygame.transform.scale((pygame.image.load('assets/Flying_Pikachu_Dash.png').convert_alpha()), (32*2, 32*2))
-#bird_upflap = pygame.transform.scale((pygame.image.load('assets/Flying_Pikachu_Dash.png').convert_alpha()), (32*2, 32*2))
+bird_downflap = pygame.transform.scale((pygame.image.load('assets/Flying_Pikachu_Dash.png').convert_alpha()), (32*2, 32*2))
+bird_midflap = pygame.transform.scale((pygame.image.load('assets/Flying_Pikachu_Dash.png').convert_alpha()), (32*2, 32*2))
+bird_upflap = pygame.transform.scale((pygame.image.load('assets/Flying_Pikachu_Dash.png').convert_alpha()), (32*2, 32*2))
 
-bird_downflap = pygame.transform.scale((pygame.image.load('assets/yellowbird-downflap.png').convert_alpha()), (34*1.5, 24*1.5))
-bird_midflap = pygame.transform.scale((pygame.image.load('assets/yellowbird-midflap.png').convert_alpha()), (34*1.5, 24*1.5))
-bird_upflap = pygame.transform.scale((pygame.image.load('assets/yellowbird-upflap.png').convert_alpha()), (34*1.5, 24*1.5))
+#bird_downflap = pygame.transform.scale((pygame.image.load('assets/yellowbird-downflap.png').convert_alpha()), (34*1.5, 24*1.5))
+#bird_midflap = pygame.transform.scale((pygame.image.load('assets/yellowbird-midflap.png').convert_alpha()), (34*1.5, 24*1.5))
+#bird_upflap = pygame.transform.scale((pygame.image.load('assets/yellowbird-upflap.png').convert_alpha()), (34*1.5, 24*1.5))
 bird_frames = [bird_downflap,bird_midflap,bird_upflap]
 bird_index = 0
 bird_surface = bird_frames[bird_index]
@@ -112,8 +113,8 @@ pygame.time.set_timer(BIRDFLAP,200)
 #bird_surface = pygame.transform.scale(bird_surface, (bird_surface.get_width()*1.5, bird_surface.get_height()*1.5))
 #bird_rect = bird_surface.get_rect(center = (100, 320))
 
-pipe_surface = pygame.image.load('assets/pipe-green.png').convert()
-pipe_surface = pygame.transform.scale(pipe_surface, (pipe_surface.get_width()*1.5, pipe_surface.get_height()*1.5))
+pipe_surface = pygame.image.load('assets/pipe-murder.png').convert_alpha()
+pipe_surface = pygame.transform.scale(pipe_surface, (pipe_surface.get_width(), pipe_surface.get_height()))
 pipe_list = []
 SPAWNPIPE = pygame.USEREVENT
 pygame.time.set_timer(SPAWNPIPE,1200)
